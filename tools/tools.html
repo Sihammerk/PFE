@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="tools.css">
+    <title>ONAAPH</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#usertools.html">Tools</a></li>
+                <li><a href="#">Command Status</a></li>
+                <li class="menu-container">
+                    <a href="#" id="settings-btn">Settings</a>
+                    <div id="dropdown-menu" class="dropdown"> 
+                        <a href="myprofile.html"> 👤My profile</a>
+                        <a href="#"> ⬅ Log out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <section class="users-tools">
+            <div class="content">
+                <figure> 
+                    <img src="assets/images/Fauteuil-Roulant-Manuel-Invacare-Action2-NG-FIXE.jpg" alt="img"> 
+                    <figcaption> 
+                        <h3>Fauteuil roulant manuel</h3> 
+                        <p class="short-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis eveniet labore voluptatum aliquid molestiae maiores totam obcaecati illo, error perspiciatis accusantium nihil nulla beatae, aut blanditiis est necessitatibus repellendus ducimus?</p>
+                        <button class="read-more-btn">Read More</button>
+                    </figcaption> 
+                    <button class="Command-1"> Add to wishList</button>     
+                </figure>
+            </div>
+
+            <!-- Repeat for other tools -->
+
+        </section> 
+    </main>
+
+    <!-- Fenêtre en plein écran -->
+    <div class="fullscreen-detail" style="display: none;">
+        <div class="detail-content">
+            <span class="close-btn">&times;</span>
+            <img id="full-img" src="" alt="Full Image">
+            <h3 id="full-name"></h3>
+            <p id="full-info"></p>
+            <button class="full-add-to-wishlist">Add to Wishlist</button>
+        </div>
+    </div>
+
+    <script>
+        // Sélectionner tous les éléments de contenu
+        document.querySelectorAll('.content').forEach(function(contentBox) {
+            contentBox.addEventListener('click', function() {
+                // Trouver les informations du produit
+                const imageSrc = contentBox.querySelector('img').src;
+                const name = contentBox.querySelector('h3').textContent;
+                const info = contentBox.querySelector('p').textContent;
+
+                // Remplir les informations dans le mode plein écran
+                document.getElementById('full-img').src = imageSrc;
+                document.getElementById('full-name').textContent = name;
+                document.getElementById('full-info').textContent = info;
+
+                // Afficher le mode plein écran
+                document.querySelector('.fullscreen-detail').style.display = 'flex';
+            });
+        });
+
+        // Fermer le mode plein écran lorsque l'on clique sur le bouton de fermeture
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.fullscreen-detail').style.display = 'none';
+        });
+
+        // Gérer le comportement "Read More"
+        document.querySelectorAll('.read-more-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const p = button.previousElementSibling; // Le <p> de la description
+                p.classList.toggle('expanded'); // Ajouter ou retirer la classe 'expanded'
+                
+                // Modifier le texte du bouton en fonction de l'état
+                if (p.classList.contains('expanded')) {
+                    button.textContent = "Read Less";
+                } else {
+                    button.textContent = "Read More";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

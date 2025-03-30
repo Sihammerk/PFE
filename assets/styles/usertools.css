@@ -1,0 +1,176 @@
+
+* {
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+    background: #f2f2f2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f6f7;
+    position: fixed;  
+    top: 0;           
+    left: 0;          
+    width: 100%;      
+    z-index: 1000;    
+    box-shadow: 0 4px 6px rgba(41, 9, 8, 0.1);  
+
+}
+
+.logo img {
+    height: 40px;
+}
+
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: rgb(50, 122, 194);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color:rgb(50, 122, 194);
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.users-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    gap: 15px; /* Ajoute un espacement égal entre les éléments */
+}
+
+.content {
+    flex: 1 1 20%; /* Cela assure que tous les éléments ont une largeur égale en utilisant flex */
+    margin: 15px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #f2f2f2;
+    min-width: 200px; /* Pour que les éléments ne deviennent pas trop petits sur des écrans réduits */
+}
+
+.content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+p {
+    text-align: center;
+    color: #b2bec3;
+    margin: 0;
+}
+
+button {
+    font-size: 24px;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 0 0 20px 20px;
+    transition: background-color 0.3s;
+}
+
+.Command-1, .Command-2, .Command-3 {
+    background: black;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Responsive */
+@media(max-width: 1000px) {
+    .content {
+        flex: 1 1 45%; /* Augmente la largeur des éléments pour les écrans plus petits */
+    }
+}
+
+@media(max-width: 750px) {
+    .content {
+        flex: 1 1 100%; /* Assure que les éléments prennent 100% de la largeur sur les très petits écrans */
+    }
+}
+
+
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 160px;
+    display: none;
+    z-index: 1000;
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background-color: #cfd1d3;
+    color: black;
+}
+
+.show {
+    display: block;
+}
+

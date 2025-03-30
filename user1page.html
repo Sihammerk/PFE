@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/user1page.css">
+    <title>ONAAPH</title>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Command Status</a></li>
+                <li class="menu-container">
+                    <a href="#" id="settings-btn">Settings</a>
+                    <div id="dropdown-menu" class="dropdown">
+                        <a href="myprofile.html"> 👤My profile</a>
+                        <a href="#"> ⬅ Log out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       <a href="usertools.html" class="btn-enter"> Get your needs</a>
+    </main>
+
+    <script>
+        // Sélection du bouton et du menu
+        const settingsBtn = document.getElementById("settings-btn");
+        const dropdownMenu = document.getElementById("dropdown-menu");
+
+        // Afficher/Masquer le menu déroulant quand on clique sur "Settings"
+        settingsBtn.addEventListener("click", function(event) {
+            event.preventDefault(); // Empêche le lien de suivre une URL
+            event.stopPropagation(); // Empêche la propagation du clic
+            dropdownMenu.classList.toggle("show");
+        });
+
+        // Cacher le menu si on clique ailleurs
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest(".menu-container")) {
+                dropdownMenu.classList.remove("show");
+            }
+        });
+    </script>
+</body>
+</html>

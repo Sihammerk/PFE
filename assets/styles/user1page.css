@@ -1,0 +1,116 @@
+* { 
+    margin: 0;    
+    box-sizing: border-box; 
+} 
+
+body { 
+    font-family: sans-serif; 
+    background: #f2f2f2; 
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Hauteur de la page pleine */
+    margin: 0; /* Retirer toute marge par défaut */
+}
+
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    background-color: #f4f6f7; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+} 
+
+.logo img { 
+    height: 40px; 
+} 
+
+.nav-links { 
+    list-style-type: none; 
+    display: flex; 
+} 
+
+.nav-links li { 
+    margin-left: 20px; 
+} 
+
+.nav-links a { 
+    color:rgb(50, 122, 194);
+    text-decoration: none; 
+    font-size: 16px; 
+    padding: 5px 10px; 
+    transition: background-color 0.3s; 
+} 
+
+.nav-links a:hover {
+    background-color:rgb(50, 122, 194);
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+.btn-enter{
+    background-color: rgb(50, 122, 194); /* Couleur de fond verte */ 
+    color: white; /* Texte blanc */ 
+    border: none; /* Pas de bordure */ 
+    padding: 15px 32px; /* Espacement interne */ 
+    text-align: center; /* Centrer le texte */ 
+    text-decoration: none; /* Retirer la décoration de texte */ 
+    display: inline-block; /* Le rendre en ligne avec d'autres éléments */ 
+    font-size: 16px; /* Taille du texte */ 
+    border-radius: 50px; /* Coins arrondis */ 
+    cursor: pointer; /* Curseur en forme de main */ 
+    transition: background-color 0.3s, transform 0.3s; /* Effet de transition */ 
+    margin-top: 300px;
+    transform: scale(1.1); /* Agrandir légèrement le bouton */   
+} 
+
+.btn-enter:hover{
+    background-color: rgba(50, 122, 194, 0.623);
+}
+
+
+
+.btn-enter:active { 
+    background-color: rgb(204, 235, 253);/* Changer la couleur de fond lors du clic */
+    transform: scale(1); /* Retourner à la taille normale au clic */ 
+} 
+
+.menu-container { 
+    position: relative; 
+    display: inline-block; 
+} 
+
+.dropdown { 
+    position: absolute; 
+    top: 100%; 
+    right: 0; 
+    background: white; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    border-radius: 5px; 
+    min-width: 160px; 
+    display: none; 
+    z-index: 1000; 
+} 
+
+.dropdown a { 
+    display: block; 
+    padding: 12px; 
+    color: black; 
+    text-decoration: none; 
+} 
+
+
+.dropdown a:hover {
+    background-color: #cfd1d3;
+    color: black;
+}
+
+.show { 
+    display: block; 
+}
